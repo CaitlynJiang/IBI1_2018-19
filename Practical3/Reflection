@@ -9,10 +9,10 @@ Yes, figure out what I have done and correct the wrong steps when I do not know 
 
 What questions do you have? 
 A lot, I hope I'll recall all of them...
-1. The instruction said that The commit messages should be relatively informative. Since this tip is on the last page and I didn't read it until I finish all my work, a lot of commit messages of mine didn't make sense (But that's usually because I was really confusing by the diff steps so I typed WHAAAT, something like that). Is it possible to change the commit information afterwards? And how?
-2. I don't know what the "index" file is for when we're creating a website. Why should it be deleted so that the webpage can be shown?
-3. What does ".DS_Store" in my modification means? Is it because every time I move one file to another folder (or maybe open a folder) may create a ".DS_Store" modification?
-4. I don't know how to access an overall view of my files in GitKraken. I just went back to the changes I make to find them, or look for them in the finder.
-5. Is moving a repository a permanent loss of data?
+√ 1. The instruction said that The commit messages should be relatively informative. Since this tip is on the last page and I didn't read it until I finish all my work, a lot of commit messages of mine didn't make sense (But that's usually because I was really confusing by the diff steps so I typed WHAAAT, something like that). Is it possible to change the commit information afterwards? And how? - You can ONLY change the last commit message through git keaken.
+√ 2. I don't know what the "index" file is for when we're creating a website. Why should it be deleted so that the webpage can be shown? - Still confuse. Index has a priority, and some webpage styles we chose have created index and some have not. We're expected to delete index and write in the Readme, but index contains a lot of useful information and instrustions on designing a website.
+√ 3. What does ".DS_Store" in my modification means? Is it because every time I move one file to another folder (or maybe open a folder) may create a ".DS_Store" modification? - DS Store is a "invisible" file Mac OS uses to store icons and background picture or and maybe some file catalogs.
+√ 4. I don't know how to access an overall view of my files in GitKraken. I just went back to the changes I make to find them, or look for them in the finder. - Git Kraken is not a file manager.
+√ 5. Is moving a repository a permanent loss of data? - Yes
 
 If you read these, thank you for checking on my reflection ☺️!
