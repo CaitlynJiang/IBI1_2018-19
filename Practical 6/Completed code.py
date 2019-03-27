@@ -22,9 +22,9 @@ for l in file:
         if re.match(r'\S+@\S+com|cn',l):
             name = str(re.findall(r'.com,To (\S+):',l))
             name = name[2:-2]
-            print(name)
+            #print(name)
             i=i[1:-1]
-            print (i)
+            #print (i)
             print(i,':Correct Address!')
             mail_host="smtp.zju.edu.cn"  
             mail_user="3180111436"    
@@ -38,8 +38,8 @@ for l in file:
             Sj="To User: Your analysis has been finished!"
             Mt = re.sub(r'User',name,Mt) 
             Sj = re.sub(r'User',name,Sj)
-            print (Mt)
-            print (Sj)
+            #print (Mt)
+            #print (Sj)
  
             message = MIMEText(Mt, 'plain', 'utf-8')
             message['From'] = Header("Caitlyn", 'utf-8')
