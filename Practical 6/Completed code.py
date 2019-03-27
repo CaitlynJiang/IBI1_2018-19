@@ -26,13 +26,13 @@ for l in file:
             i=i[1:-1]
             print (i)
             print(i,':Correct Address!')
-            mail_host="smtp.zju.edu.cn"  #设置服务器
-            mail_user="3180111436"    #用户名
-            mail_pass="Fuga@7831"   #口令 
+            mail_host="smtp.zju.edu.cn"  
+            mail_user="3180111436"    
+            mail_pass="***********"   #This cannot run for this is a fake password
  
  
-            sender = '3180111436@zju.edu.cn'
-            receivers = [i]  # 接收邮件，可设置为你的QQ邮箱或者其他邮箱
+            sender = '3180111436@zju.edu.cn' #my zju email
+            receivers = [i]  
 
             Mt="Dear User,\nPlease find the results of your gene set linkage analysis result in attached file.\nThis is an email sent by the server, please don't reply.\nThank you for using GSLA."
             Sj="To User: Your analysis has been finished!"
@@ -52,7 +52,7 @@ for l in file:
             try:
                 
                 smtpObj = smtplib.SMTP() 
-                smtpObj.connect(mail_host, 25)    # 25 为 SMTP 端口号
+                smtpObj.connect(mail_host, 25)   
                 smtpObj.login(mail_user,mail_pass)  
                 smtpObj.sendmail(sender, receivers, message.as_string())
                 print ("邮件发送成功")
