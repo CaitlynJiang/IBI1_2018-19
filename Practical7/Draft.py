@@ -15,6 +15,8 @@ print("Input numbers:" + Num)
 L=Num.split(',')
 S = ''.join(L)
 A=len(S)
+a=A-1
+#print(a)
 lis=[]
 for i in itertools.permutations(S,A):
     #print(i)
@@ -26,3 +28,5 @@ for i in lis:
         if i not in lis2:
             lis2.append(i)
 print(lis2)
+
+
