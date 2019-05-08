@@ -28,5 +28,8 @@ while p==False:
 
      
 print(n)
+<<<<<<< HEAD
 
             
+=======
+>>>>>>> master
