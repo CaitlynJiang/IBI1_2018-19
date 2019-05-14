@@ -1,43 +1,24 @@
-#TRY1:failed
+# May 14th: dk why here's no author information 
 from random import randint
 
-from math import floor
 
-x = randint(1,8193)
-m=x
-print("x is",x)
-
-y=str()
-Exp=13
-for i in range(0,13):
-    #ought to be (0,14)
-    n=floor(x/2**Exp)
-    x=x%2**Exp
-    Exp=Exp-1
-#    print(x)
-#    print("i=",i)
-#    print("Exp=",Exp)
-#    print("n=",n)
-    y=y+"+"+str(n)+"*"+"2**"+str(Exp)
-print(m,"is",y)
-
-
-#TRY2 with the help of Yuxing
-x=1556
-y=str(x)+" is "
-Exp=13
-for i in range(0,14):
-    if x/2**Exp>1:
-        x=x-2**Exp
+x = randint(1,8193) # according to protocol ‘for simplicity, you can assume that x is no larger than 8192 = 2^13'
+print("x is",x) # to show the value of x
+# With the help of Yuxing
+y=str(x)+" is " # initiate the output words
+Exp=13 # to see if the number can be divided by 2^13, start from the biggest
+for i in range(0,14): #loop
+    if x/2**Exp>1: # if x > 2^Exp
+        x=x-2**Exp #change x for later calculation
         y=y+"2**"+str(Exp)+"+"
-    elif x/2**Exp==1:
+    elif x/2**Exp==1: # if x = 2^Exp ----- no more add to y
         x=0
         # at first I forgot to add x=0
         y=y+"2**"+str(Exp)
-    else:
-        x=x
+    else: # because 2^0=1, every possible number is composed by 2^n add together, so there's no x < 2^Exp 
+        x=x 
         Exp=Exp
-    Exp=Exp-1
+    Exp=Exp-1 # loop down to 
     
 print(y)
     
