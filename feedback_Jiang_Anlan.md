@@ -15,7 +15,7 @@ The code for week 3 is great. There is no need to change anything.
 
 ### Feedback Week 4:
 
-- [] be more precise when saying what the mystery code does.
+- [√] be more precise when saying what the mystery code does.
 
 
 - [√] In the "powers of 2" file, there is not a lot of pseudocode that explains what you did
