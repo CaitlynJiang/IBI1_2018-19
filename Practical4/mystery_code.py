@@ -1,5 +1,6 @@
 # What does this piece of code do?
 # Answer: This cose can be used to choose the prime numbers.
+# New added: Determine whether a random number from range (1,100) is a prime number, if not, keep drawing random numbers till get a prime number and print it out.  
 
 # Import libraries
 # randint allows drawing a random number, 
@@ -28,8 +29,3 @@ while p==False:
 
      
 print(n)
-<<<<<<< HEAD
-
-            
-=======
->>>>>>> master
