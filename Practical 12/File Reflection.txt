@@ -1,0 +1,15 @@
+
+Was it easy? No
+Was it hard? Not really. But when making up for it I went blind.
+
+Were there bits you enjoyed more (or less) than others? 
+It's cool! (The hot map part) And it's random, very fascinating, makes one feels the code he wrote is useful and might apply to real circumstances
+
+What was the most important thing you learned?
+Not pulling off tasks until deadline (which I might never learn) 
+But I'm planning on learn beforehand in the vacation to become a 'python master' XD
+
+P.S. 
+I still find some bug in the plot showing
+Such as some line in vaccination plot did not shown
+And sometimes the green(recovered)part in the spatial 100 will become purple...

@@ -17,7 +17,7 @@ def drawmap(i, population):
     if i in [1, 10, 50, 100]:
         plt.figure(figsize=(6,4), dpi=150)
         plt.imshow(population, cmap='viridis', interpolation='nearest')
-        plt.savefig ('Plot_spaial'+str(i),type='png')
+        plt.savefig ('Plot_spatial'+str(i),type='png')
     return
 
 b=0.3
