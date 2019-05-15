@@ -1,70 +1,59 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
-Created on Wed May  8 09:09:31 2019
+Created on Wed May 15 09:16:17 2019
 
 @author: caitlynjiang
 """
+import os
+os.chdir(r'/Users/caitlynjiang/OneDrive/IBI1_2018-19/Practical13')
 
-import numpy as np
-import matplotlib.pyplot as plt
-
-# define basic variables
-t = 10000
-i = 1
-r = 0
-n = 10001
-
-b = 0.3
-y = 0.05
-
-
-
-vr = 0 #vaccinated ratio
-for i in range(0,11):
-    s = int(t-t*vr)
-    i = 1
-    r = 0
-    sarr = np.array ([s])
-    iarr = np.array ([i])
-    rarr = np.array ([r])
+def xml_to_cps():
+    import os
+    import xml.dom.minidom
     
-    # 1000 loop times
-    count=1
-    while count < 1000:
-        pofi = i/n # Helped by Zhang Yiwei,at first I put this line before the loop and get a very flat wierd plot
-        b2 = pofi*b
-        b1 = 1-pofi*b
-        niarr = np.random.choice(range(2),s,p=[b1,b2])
-        nrarr = np.random.choice(range(2),i,p=[0.95,0.05])
-        ni = np.sum(niarr==1)
-        nr = np.sum(nrarr==1)
-        s = s-ni
-        i = i+ni-nr
-        r = r+nr
-    #record the output of each time step susceptible, infected, and recovered individuals) 
+    # first, convert xml to cps 
+    os.system("Applications/COPASI/CopasiSE -i predator-prey.xml -s predator-prey.cps")
     
-        sarr = np.append(sarr,s)
-        iarr = np.append(iarr,i)
-        rarr = np.append(rarr,r)
-        count = count+1
-
-    vr += 0.1
-
-#plot(), xlabel(), ylabel(1), title(), legend()
-
-plt.figure(figsize =(6,4),dpi=150)
-#plt.plot(sarr,label='susceptible')
-plt.plot(iarr,label='infected')
-#plt.plot(rarr,label='recovered')
-plt.xlabel("times") 
-plt.ylabel("numbers of people")
-plt.title("Infection evolution")
-plt.legend()
-#plt.savefig ('Plot',type='png')
-
-
-
-
-
-
+    # now comes the painful part. Just copy and paste this ok
+    
+    cpsTree = xml.dom.minidom.parse("predator-prey.cps")
+    cpsCollection = cpsTree.documentElement
+    
+    reportFile = xml.dom.minidom.parse("report_ref.xml")
+    reportLine = reportFile.documentElement
+    
+    tasks = cpsCollection.getElementsByTagName("Task")
+    for task in tasks:
+        if task.getAttribute("name")=="Time-Course":
+            task.setAttribute("scheduled","true")
+            task.insertBefore(reportLine,task.childNodes[0])
+            break
+        
+    
+    for taskDetails in task.childNodes:
+        if taskDetails.nodeType ==1:
+            if taskDetails.nodeName == "Problem":
+                problem = taskDetails
+                
+    for param in problem.childNodes:
+        if param.nodeType ==1:
+            if param.getAttribute("name")=="StepNumber":
+                param.setAttribute("value","200")
+            if param.getAttribute("name")=="StepSize":
+                param.setAttribute("value","1")
+            if param.getAttribute("name")=="Duration":
+                param.setAttribute("value","200")
+           
+            
+    report18 = xml.dom.minidom.parse("report18.xml")
+    report = report18.documentElement
+    
+    listOfReports  =  cpsCollection.getElementsByTagName("ListOfReports")[0]
+    listOfReports.appendChild(report)
+    
+    cpsFile = open("predator-prey.cps","w")
+    cpsTree.writexml(cpsFile)
+    cpsFile.close()
+ 
+y=xml_to_cps()
