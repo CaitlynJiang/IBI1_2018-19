@@ -1,0 +1,20 @@
+
+Plan a workflow how you would use this information for comparing two sequences:
+# choose BLOUSM file and read it into list or array
+# design functions to calculate alignment scores
+# design input 
+# call on functions
+# design output
+
+Think how you can compare the output scores in a meaningful way. How would you need to adjust your scoring if you would like to compare the similarity between two 100 amino acid containing proteins and another set of 500 amino acid containing proteins? 
+
+Since the length of the sequence may affect on the score, we can take the average scores of 100/500 length protein relatively to compare (scores should be divided by how many amino acid they have).
+
+
+P.S.
+1. The instruction said 'The aim ... use that for comparing the protein sequences shown below (also available as separate txt files)'
+   It seemed that using files is not compulsory so I choose to copy and paste...
+
+2. I found that different website had different BLOSUM files with different reliabilities.
+
+3. I haven't complete the bonus code yet. I'll make it in vacation! 
