@@ -83,7 +83,7 @@ else:
     if a==True:    
         if (dfs(len(l))): # returns 0
             print('Yes')
-        else: #returns 1
+        else: 
             print('No')
         print ('recurtion times:',count)
                 
