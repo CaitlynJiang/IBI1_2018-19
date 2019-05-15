@@ -13,7 +13,7 @@ def xml_to_cps():
     import xml.dom.minidom
     
     # first, convert xml to cps 
-    os.system("Applications/COPASI/CopasiSE -i predator-prey.xml -s predator-prey.cps")
+    os.system("/Applications/COPASI/CopasiSE -i predator-prey.xml -s predator-prey.cps")
     
     # now comes the painful part. Just copy and paste this ok
     
@@ -52,8 +52,8 @@ def xml_to_cps():
     listOfReports  =  cpsCollection.getElementsByTagName("ListOfReports")[0]
     listOfReports.appendChild(report)
     
-    cpsFile = open("predator-prey.cps","w")
+    cpsFile = open("predator-prey.cps","w",encoding='utf-8')
     cpsTree.writexml(cpsFile)
     cpsFile.close()
- 
+    
 y=xml_to_cps()
