@@ -38,13 +38,12 @@ for l in file:
             Mt=''
             for words in text:
                 Mt=Mt+words
-            #print(Mt)
                 
             Sj="To User: Your analysis has been finished!"
             Mt = re.sub(r'User',name,Mt) 
             Sj = re.sub(r'User',name,Sj)
-            print (Sj)
-            print (Mt)
+            print (Sj) # Pseudo these two print lines if donnot want to see the content shown in the consoel. P.S. This is for showing the content of the email for the emails cannot be sent unless correct email address with correct password is provided 
+            print (Mt) # Note: the sender's name will not be shown in the console
  
             message = MIMEText(Mt, 'plain', 'utf-8')
             message['From'] = Header("Caitlyn", 'utf-8')
@@ -60,9 +59,9 @@ for l in file:
                 smtpObj.connect(mail_host, 25)   
                 smtpObj.login(mail_user,mail_pass)  
                 smtpObj.sendmail(sender, receivers, message.as_string())
-                print ("邮件发送成功")
+                print ("Mail sent seccesfully!")
             except smtplib.SMTPException:
-                print ("Error: 无法发送邮件")
+                print ("Error: Failed to send mail")
             
         else:
             print(i[1:-1],':Wrong Address!')
