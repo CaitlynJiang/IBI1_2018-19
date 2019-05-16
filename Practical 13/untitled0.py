@@ -57,3 +57,6 @@ def xml_to_cps():
     cpsFile.close()
     
 y=xml_to_cps()
+
+# my terminal said there's an error with 'duplicated report_18' that I cannot create created 'model_results.csv'
+# I used the given one in later tasks
