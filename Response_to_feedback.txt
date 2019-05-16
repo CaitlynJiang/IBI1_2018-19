@@ -1,0 +1,9 @@
+For week 4:
+
+Add more explanation to the mysterious code by #New added:(under the initiation lines of the code)
+Add more pseudo codes to the power of two file
+Remove the conflict solution
+
+
+For week 5:
+Added the way to let the user do the sequence input in both codes
