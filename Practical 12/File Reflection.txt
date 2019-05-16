@@ -13,3 +13,6 @@ P.S.
 I still find some bug in the plot showing
 Such as some line in vaccination plot did not shown
 And sometimes the green(recovered)part in the spatial 100 will become purple...
+
+I put the figures given by the teacher in a folder called given_image, in order to not mistake them with the figure my code plot out
+The name of the figures are different
